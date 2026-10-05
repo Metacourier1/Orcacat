@@ -1,0 +1,501 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>ORCACAT — Half Ocean Killer. Half Silent Land Hunter.</title>
+<meta name="description" content="The OrcaCat was born from the white belly of the ancient Orca. One bloodline. Limited forever. Launching on Solana today at 8PM UTC — 1,000,000,000 supply." />
+
+<!-- ============ SITE ICON / FAVICON ============ -->
+<link rel="icon" type="image/jpeg" href="images/logo.jpeg" />
+<link rel="apple-touch-icon" href="images/logo.jpeg" />
+<link rel="shortcut icon" href="images/logo.jpeg" />
+
+<!-- Social preview -->
+<meta property="og:title" content="ORCACAT — Same Ocean. Bigger Dreams." />
+<meta property="og:description" content="One bloodline. Limited forever. The belly has closed. Launching on SOL." />
+<meta property="og:image" content="images/banner-1.jpeg" />
+<meta property="og:type" content="website" />
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:image" content="images/banner-1.jpeg" />
+
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Bakbak+One&family=Outfit:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet" />
+
+<link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+<div class="bg-layer"></div>
+<canvas id="bubbles"></canvas>
+<div class="vignette"></div>
+
+<!-- ================= NAV ================= -->
+<header class="nav" id="nav">
+  <div class="wrap nav-in">
+    <a href="#home" class="brand">
+      <img src="images/logo.jpeg" alt="OrcaCat logo" />
+      <b>ORCACAT</b>
+    </a>
+    <nav class="nav-links" id="navLinks">
+      <a href="#lore">The Lore</a>
+      <a href="#tokenomics">Tokenomics</a>
+      <a href="#roadmap">Roadmap</a>
+      <a href="#buy">How to Buy</a>
+      <a href="#community">Community</a>
+    </nav>
+    <div class="nav-cta">
+      <a class="btn btn-ghost" href="https://x.com/orcacatt?s=11" target="_blank" rel="noopener" aria-label="X">
+        <svg viewBox="0 0 24 24" fill="currentColor"><path d="M18.9 2H22l-7.6 8.7L23.3 22h-6.9l-5.4-7-6.2 7H1.7l8.1-9.3L1.1 2h7l4.9 6.4L18.9 2Zm-1.1 18h1.7L7.3 3.8H5.5L17.8 20Z"/></svg>
+        <span class="btn-label">X</span>
+      </a>
+      <a class="btn btn-primary" href="https://t.me/orcacat_SOL" target="_blank" rel="noopener">
+        <svg viewBox="0 0 24 24" fill="currentColor"><path d="M21.9 4.3 18.6 20c-.2 1.1-.9 1.4-1.8.9l-4.9-3.6-2.4 2.3c-.3.3-.5.5-1 .5l.3-4.9 9-8.1c.4-.3-.1-.5-.6-.2L6.1 13.5 1.3 12c-1-.3-1-1 .2-1.5l19-7.3c.9-.3 1.6.2 1.4 1.1Z"/></svg>
+        <span class="btn-label">Telegram</span>
+      </a>
+      <button class="burger" id="burger" aria-label="Menu" aria-expanded="false" aria-controls="navLinks">
+        <svg class="ic-menu" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M3 6h18M3 12h18M3 18h18"/></svg>
+        <svg class="ic-close" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M6 6l12 12M18 6L6 18"/></svg>
+      </button>
+    </div>
+  </div>
+</header>
+
+<main>
+<!-- ================= HERO ================= -->
+<section class="hero" id="home">
+  <div class="wrap hero-in">
+    <img class="hero-logo" src="images/logo.jpeg" alt="OrcaCat" />
+    <span class="eyebrow"><span class="dot"></span> Live on Solana · Launching 8PM UTC · 9PM WAT</span>
+    <h1>ORCACAT</h1>
+    <div class="ticker-line">$OrcaCat</div>
+    <p class="tag">Half ocean killer. Half silent land hunter. <span>One bloodline.</span></p>
+
+    <!-- COUNTDOWN -->
+    <div class="count-shell glass" id="counter">
+      <div class="count-label">The belly opens in — <b>8PM UTC</b> · 9PM WAT · Sat 12 Sep</div>
+      <div class="count-grid">
+        <div class="unit"><span class="n" id="d">00</span><div class="l">Days</div></div>
+        <div class="unit"><span class="n" id="h">00</span><div class="l">Hours</div></div>
+        <div class="unit"><span class="n" id="m">00</span><div class="l">Minutes</div></div>
+        <div class="unit"><span class="n" id="s">00</span><div class="l">Seconds</div></div>
+      </div>
+      <div class="count-foot">Those who claimed it early now hold the bloodline. <b>Everyone else is already late.</b></div>
+      <div class="live-banner">🐋 The belly has opened — $OrcaCat is LIVE</div>
+    </div>
+
+    <!-- CONTRACT -->
+    <div class="ca glass">
+      <span class="k">CA</span>
+      <code id="caText" title="OrcaCat contract address">32K6eyEuTNtqfcqMzLYLtDQpKqcshHeiNmXssNx2pump</code>
+      <button class="btn btn-primary copy" id="copyCa">Copy</button>
+    </div>
+
+    <div class="hero-cta">
+      <a class="btn btn-primary" href="https://t.me/orcacat_SOL" target="_blank" rel="noopener">
+        <svg viewBox="0 0 24 24" fill="currentColor"><path d="M21.9 4.3 18.6 20c-.2 1.1-.9 1.4-1.8.9l-4.9-3.6-2.4 2.3c-.3.3-.5.5-1 .5l.3-4.9 9-8.1c.4-.3-.1-.5-.6-.2L6.1 13.5 1.3 12c-1-.3-1-1 .2-1.5l19-7.3c.9-.3 1.6.2 1.4 1.1Z"/></svg>
+        Join the Hunt
+      </a>
+      <a class="btn btn-ghost" href="https://x.com/orcacatt?s=11" target="_blank" rel="noopener">
+        <svg viewBox="0 0 24 24" fill="currentColor"><path d="M18.9 2H22l-7.6 8.7L23.3 22h-6.9l-5.4-7-6.2 7H1.7l8.1-9.3L1.1 2h7l4.9 6.4L18.9 2Zm-1.1 18h1.7L7.3 3.8H5.5L17.8 20Z"/></svg>
+        Follow on X
+      </a>
+    </div>
+
+    <button class="btn btn-ghost scroll-cue" id="scrollCue" type="button" aria-label="Scroll to explore">Explore ↓</button>
+  </div>
+</section>
+
+<!-- ================= MARQUEE ================= -->
+<div class="marquee" aria-hidden="true">
+  <div class="marquee-track">
+    <span>One Bloodline</span><span>Limited Forever</span><span>Same Ocean · Bigger Dreams</span>
+    <span>Small Cat · Big Ocean</span><span>The Belly Has Closed</span><span>HODL · VIBE · GROW</span>
+    <span>One Bloodline</span><span>Limited Forever</span><span>Same Ocean · Bigger Dreams</span>
+    <span>Small Cat · Big Ocean</span><span>The Belly Has Closed</span><span>HODL · VIBE · GROW</span>
+  </div>
+</div>
+
+<!-- ================= LORE ================= -->
+<section id="lore">
+  <div class="wrap lore-grid">
+    <figure class="lore-art rv">
+      <img src="images/banner-2.jpeg" alt="OrcaCat riding an orca" />
+      <figcaption>More than a memecoin. It's a movement.</figcaption>
+    </figure>
+    <div class="lore-copy">
+      <span class="eyebrow rv"><span class="dot"></span> The Origin</span>
+      <h2 class="rv">Born From The <span class="hl">White Belly</span></h2>
+      <div class="lore-lines rv">
+        <p>The OrcaCat was born from the white belly of the ancient Orca.</p>
+        <p>Half ocean killer. Half silent land hunter.</p>
+        <p>One bloodline. Limited forever.</p>
+        <p>When the white surface split, only a few were watching.</p>
+        <p>Those who claimed it early now hold the bloodline. Everyone else is already late.</p>
+        <p class="closer">The belly has closed. <em>No more will be born.</em></p>
+        <p class="closer">You either hold OrcaCat… <em>or you don't.</em></p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ================= TOKENOMICS ================= -->
+<section id="tokenomics">
+  <div class="wrap">
+    <div class="sec-head">
+      <span class="eyebrow rv"><span class="dot"></span> The Bloodline</span>
+      <h2 class="rv">Token<span class="hl">omics</span></h2>
+      <p class="lead rv">One bloodline. One contract. No hype numbers — the full breakdown drops with the CA.</p>
+    </div>
+    <div class="tok-grid">
+      <div class="tok-card glass rv"><div class="k">Ticker</div><div class="v">$OrcaCat</div><div class="d">The one and only bloodline on Solana.</div></div>
+      <div class="tok-card glass rv"><div class="k">Total Supply</div><div class="v">1,000,000,000</div><div class="d">One billion. Fixed at mint — verifiable on-chain.</div></div>
+      <div class="tok-card glass rv"><div class="k">Taxes</div><div class="v">TBA</div><div class="d">Buy and sell tax confirmed at launch.</div></div>
+      <div class="tok-card glass rv"><div class="k">Liquidity</div><div class="v">TBA</div><div class="d">Lock and burn details confirmed at launch.</div></div>
+    </div>
+    <p class="tok-note rv">Verified on-chain: 1,000,000,000 supply · mint authority revoked · freeze authority disabled. Always verify before you buy.</p>
+  </div>
+</section>
+
+<!-- ================= ROADMAP ================= -->
+<section id="roadmap">
+  <div class="wrap">
+    <div class="sec-head">
+      <span class="eyebrow rv"><span class="dot"></span> The Ascent</span>
+      <h2 class="rv">Road<span class="hl">map</span></h2>
+    </div>
+    <div class="road">
+      <article class="phase glass rv">
+        <span class="num">01</span>
+        <span class="st now">In Progress</span>
+        <h3>The Surfacing</h3>
+        <ul>
+          <li>Stealth lore drop across X &amp; Telegram</li>
+          <li>Community building — the first watchers</li>
+          <li>Contract deployed on Solana</li>
+          <li>Launch — 8PM UTC / 9PM WAT</li>
+        </ul>
+      </article>
+      <article class="phase glass rv">
+        <span class="num">02</span>
+        <span class="st soon">Next</span>
+        <h3>The Hunt</h3>
+        <ul>
+          <li>CoinGecko &amp; CoinMarketCap listings</li>
+          <li>DexScreener / Birdeye trending push</li>
+          <li>Meme raid squads + content engine</li>
+          <li>First wave of community contests</li>
+        </ul>
+      </article>
+      <article class="phase glass rv">
+        <span class="num">03</span>
+        <span class="st soon">Soon</span>
+        <h3>The Bloodline</h3>
+        <ul>
+          <li>OrcaCat staking &amp; holder rewards</li>
+          <li>Merch drop — "Same Ocean, Bigger Dreams"</li>
+          <li>Strategic partnerships &amp; CEX talks</li>
+          <li>Global takeover. The ocean is ours.</li>
+        </ul>
+      </article>
+    </div>
+  </div>
+</section>
+
+<!-- ================= HOW TO BUY ================= -->
+<section id="buy">
+  <div class="wrap">
+    <div class="sec-head">
+      <span class="eyebrow rv"><span class="dot"></span> Claim The Bloodline</span>
+      <h2 class="rv">How To <span class="hl">Buy</span></h2>
+    </div>
+    <div class="buy-grid">
+      <article class="step glass rv"><div class="bubble">1</div><h3>Get a Wallet</h3><p>Download <a href="https://phantom.app" target="_blank" rel="noopener">Phantom</a> or <a href="https://solflare.com" target="_blank" rel="noopener">Solflare</a> and create a fresh Solana wallet. Keep your seed phrase offline.</p></article>
+      <article class="step glass rv"><div class="bubble">2</div><h3>Fund With SOL</h3><p>Buy SOL on any major exchange and send it to your wallet address. This is your fuel for the hunt.</p></article>
+      <article class="step glass rv"><div class="bubble">3</div><h3>Swap for $OrcaCat</h3><p>Copy the CA above and paste it into <a href="https://jup.ag" target="_blank" rel="noopener">Jupiter</a> or <a href="https://raydium.io" target="_blank" rel="noopener">Raydium</a> to swap your SOL.</p></article>
+      <article class="step glass rv"><div class="bubble">4</div><h3>Hold The Bloodline</h3><p>Add the token to your wallet, join the Telegram, and hold. The belly has closed — no more will be born.</p></article>
+    </div>
+  </div>
+</section>
+
+<!-- ================= GALLERY ================= -->
+<section id="gallery">
+  <div class="wrap">
+    <div class="sec-head">
+      <span class="eyebrow rv"><span class="dot"></span> The Vibe</span>
+      <h2 class="rv">Same Ocean. <span class="hl">Bigger Dreams.</span></h2>
+      <p class="lead rv">It's not just a coin… it's a lifestyle.</p>
+    </div>
+    <div class="gal">
+      <figure class="rv"><img src="images/banner-1.jpeg" alt="OrcaCat lifestyle banner" /></figure>
+      <figure class="rv"><img src="images/banner-2.jpeg" alt="OrcaCat lifestyle banner" /></figure>
+    </div>
+  </div>
+</section>
+
+<!-- ================= COMMUNITY ================= -->
+<section id="community">
+  <div class="wrap">
+    <div class="comm glass rv">
+      <span class="eyebrow"><span class="dot"></span> Only A Few Were Watching</span>
+      <h2>Join The <span class="hl">Bloodline</span></h2>
+      <p class="lead">The white surface already split. The only question left is which side of the ocean you're standing on.</p>
+      <div class="socials">
+        <a class="social" href="https://x.com/orcacatt?s=11" target="_blank" rel="noopener">
+          <svg viewBox="0 0 24 24" fill="currentColor"><path d="M18.9 2H22l-7.6 8.7L23.3 22h-6.9l-5.4-7-6.2 7H1.7l8.1-9.3L1.1 2h7l4.9 6.4L18.9 2Zm-1.1 18h1.7L7.3 3.8H5.5L17.8 20Z"/></svg>
+          Follow on X
+        </a>
+        <a class="social" href="https://t.me/orcacat_SOL" target="_blank" rel="noopener">
+          <svg viewBox="0 0 24 24" fill="currentColor"><path d="M21.9 4.3 18.6 20c-.2 1.1-.9 1.4-1.8.9l-4.9-3.6-2.4 2.3c-.3.3-.5.5-1 .5l.3-4.9 9-8.1c.4-.3-.1-.5-.6-.2L6.1 13.5 1.3 12c-1-.3-1-1 .2-1.5l19-7.3c.9-.3 1.6.2 1.4 1.1Z"/></svg>
+          Telegram Community
+        </a>
+      </div>
+    </div>
+  </div>
+</section>
+</main>
+
+<!-- ================= FOOTER ================= -->
+<footer>
+  <div class="wrap foot">
+    <a href="#home" class="brand">
+      <img src="images/logo.jpeg" alt="OrcaCat" />
+      <b>ORCACAT</b>
+    </a>
+    <div class="foot-links">
+      <a href="https://x.com/orcacatt?s=11" target="_blank" rel="noopener">X / Twitter</a>
+      <a href="https://t.me/orcacat_SOL" target="_blank" rel="noopener">Telegram</a>
+      <a href="#lore">The Lore</a>
+      <a href="#buy">How to Buy</a>
+    </div>
+    <p class="disclaimer">
+      $OrcaCat is a community-driven memecoin created purely for entertainment. It has no intrinsic value, no expected financial return, and no formal team or roadmap guarantee. Nothing on this page is financial advice. Crypto is volatile and you may lose everything you put in. Always do your own research and never invest more than you can afford to lose.
+    </p>
+    <p class="copyline">© <span id="yr"></span> OrcaCat — Small Cat. Big Ocean.</p>
+  </div>
+</footer>
+
+<script>
+/* ============================================================
+   1. CONFIG — LAUNCH TIME
+   Change this single line for future launches.
+   ============================================================ */
+const LAUNCH_ISO = '2026-09-12T20:00:00Z'; // 8:00 PM UTC = 9:00 PM WAT (rescheduled to Sat 12 Sep)
+const TARGET = new Date(LAUNCH_ISO).getTime();
+
+/* ---------- countdown ---------- */
+const el = { d:document.getElementById('d'), h:document.getElementById('h'),
+             m:document.getElementById('m'), s:document.getElementById('s') };
+
+function pad(n){ return String(n).padStart(2,'0'); }
+
+function render(unit, value){
+  const node = el[unit];
+  const next = pad(value);
+  if(node.textContent !== next){
+    node.textContent = next;
+    node.classList.remove('tick');
+    void node.offsetWidth;          // restart animation
+    node.classList.add('tick');
+  }
+}
+
+/* NOTE: timer MUST be declared before tick() is first called. Previously it
+   was a `const` declared AFTER tick(), so the moment the launch time passed
+   the clearInterval(timer) below threw a TDZ ReferenceError and killed the
+   entire rest of the script (copy button, mobile menu, scroll links, year). */
+let timer = null;
+
+function tick(){
+  const diff = TARGET - Date.now();
+  if(diff <= 0){
+    document.getElementById('counter').classList.add('launched');
+    if(timer) clearInterval(timer);
+    timer = null;
+    return;
+  }
+  const sec = Math.floor(diff/1000);
+  render('d', Math.floor(sec/86400));
+  render('h', Math.floor(sec%86400/3600));
+  render('m', Math.floor(sec%3600/60));
+  render('s', sec%60);
+}
+
+tick();
+/* once the target has passed there is nothing left to count — don't spin a
+   pointless 1s interval forever */
+if(TARGET - Date.now() > 0) timer = setInterval(tick, 1000);
+
+/* ============================================================
+   CONTRACT ADDRESS — deliberately EMPTY until launch.
+
+   The CA is announced at launch. Do NOT paste the mint address in
+   here early: everything in this file is readable by anyone via
+   view-source / Ctrl+U on the deployed page, so a "hidden" address
+   is not actually hidden.
+
+   AT LAUNCH: paste the address between the quotes below, and change
+   the placeholder text inside <code id="caText"> to match.
+   ============================================================ */
+const CA = '32K6eyEuTNtqfcqMzLYLtDQpKqcshHeiNmXssNx2pump';
+const caText = document.getElementById('caText');
+const caBtn  = document.getElementById('copyCa');
+
+caText.textContent = CA || 'Coming Soon — Announced at launch';
+
+caBtn.addEventListener('click', async () => {
+  if(!CA){
+    caBtn.textContent = 'Soon';
+    setTimeout(() => caBtn.textContent = 'Copy', 1600);
+    return;
+  }
+  try{
+    await navigator.clipboard.writeText(CA);
+    caBtn.textContent = 'Copied!';
+  }catch(e){
+    // clipboard blocked (http / old browser) — select the text so the
+    // user can copy manually instead of silently failing
+    const r = document.createRange();
+    r.selectNodeContents(caText);
+    const sel = getSelection();
+    sel.removeAllRanges();
+    sel.addRange(r);
+    caBtn.textContent = 'Press Ctrl+C';
+  }
+  setTimeout(()=> caBtn.textContent = 'Copy', 1800);
+});
+
+/* ---------- sticky nav ---------- */
+const nav = document.getElementById('nav');
+addEventListener('scroll', () => {
+  nav.classList.toggle('stuck', scrollY > 30);
+}, {passive:true});
+
+/* ---------- mobile menu ---------- */
+const burger = document.getElementById('burger');
+const navLinks = document.getElementById('navLinks');
+
+function setMenu(open){
+  navLinks.classList.toggle('open', open);
+  burger.classList.toggle('on', open);
+  burger.setAttribute('aria-expanded', String(open));
+}
+burger.addEventListener('click', e => {
+  e.stopPropagation();
+  setMenu(!navLinks.classList.contains('open'));
+});
+
+/* close the dropdown when tapping outside or resizing up to desktop */
+document.addEventListener('click', e => {
+  if(navLinks.classList.contains('open') && !navLinks.contains(e.target)) setMenu(false);
+});
+addEventListener('resize', () => { if(innerWidth > 940) setMenu(false); });
+
+/* ============================================================
+   SMOOTH SCROLL FOR ALL IN-PAGE ANCHORS
+   We cannot rely on the browser's default "jump to #hash" here:
+   when a <base href> is present (hosted viewers, CDN previews), a
+   link like href="#lore" resolves to <base>/#lore and navigates
+   away instead of scrolling. Intercept the click and scroll manually
+   so nav, footer and CTA buttons always work in every context.
+   ============================================================ */
+function navOffset(){
+  const head = document.getElementById('nav');
+  return (head ? head.offsetHeight : 64) + 16;
+}
+
+function scrollToId(id){
+  const target = document.getElementById(id);
+  if(!target) return false;
+  const y = target.getBoundingClientRect().top + window.pageYOffset - navOffset();
+  window.scrollTo({ top: Math.max(y, 0), behavior: 'smooth' });
+  return true;
+}
+
+document.querySelectorAll('a[href*="#"]').forEach(a => {
+  a.addEventListener('click', e => {
+    const raw = a.getAttribute('href') || '';
+    const hash = raw.slice(raw.indexOf('#') + 1);
+    if(!hash) return;                       // plain link, let it behave normally
+    const id = decodeURIComponent(hash);
+    if(!document.getElementById(id)) return; // external page + hash, ignore
+    e.preventDefault();
+    setMenu(false);                          // close the mobile dropdown
+    scrollToId(id);
+  });
+});
+
+/* ---------- hero "Explore" cue ---------- */
+const cue = document.getElementById('scrollCue');
+if(cue) cue.addEventListener('click', e => { e.preventDefault(); scrollToId('lore'); });
+
+/* ---------- scroll reveal ---------- */
+const io = new IntersectionObserver((entries)=>{
+  entries.forEach((e,i)=>{
+    if(e.isIntersecting){
+      setTimeout(()=> e.target.classList.add('in'), Math.min(i*80, 320));
+      io.unobserve(e.target);
+    }
+  });
+},{threshold:.14, rootMargin:'0px 0px -60px 0px'});
+document.querySelectorAll('.rv').forEach(n => io.observe(n));
+
+/* ---------- year ---------- */
+document.getElementById('yr').textContent = new Date().getFullYear();
+
+/* ============================================================
+   2. OCEAN BUBBLES + DRIFTING LIGHT (canvas)
+   ============================================================ */
+(function(){
+  const cv = document.getElementById('bubbles');
+  const ctx = cv.getContext('2d');
+  let W, H, parts = [], dpr = Math.min(devicePixelRatio || 1, 2);
+  const reduce = matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+  function size(){
+    W = cv.width  = innerWidth  * dpr;
+    H = cv.height = innerHeight * dpr;
+    cv.style.width = innerWidth + 'px';
+    cv.style.height = innerHeight + 'px';
+  }
+  function build(){
+    const count = Math.round(Math.min(innerWidth,1400) / 16);
+    parts = Array.from({length:count}, () => ({
+      x: Math.random()*W,
+      y: Math.random()*H,
+      r: (Math.random()*2.4 + .6) * dpr,
+      vy: -(Math.random()*.5 + .12) * dpr,
+      vx: (Math.random()-.5)*.28 * dpr,
+      a: Math.random()*.42 + .08,
+      ph: Math.random()*Math.PI*2
+    }));
+  }
+  function frame(t){
+    ctx.clearRect(0,0,W,H);
+    for(const p of parts){
+      if(!reduce){
+        p.y += p.vy; p.x += p.vx + Math.sin((t/2200)+p.ph)*.22*dpr;
+        if(p.y < -20){ p.y = H + 20; p.x = Math.random()*W; }
+        if(p.x < -20) p.x = W + 20;
+        if(p.x > W + 20) p.x = -20;
+      }
+      const g = ctx.createRadialGradient(p.x,p.y,0,p.x,p.y,p.r*5);
+      g.addColorStop(0, 'rgba(190,245,255,'+p.a+')');
+      g.addColorStop(.5,'rgba(80,190,255,'+(p.a*.35)+')');
+      g.addColorStop(1, 'rgba(29,127,255,0)');
+      ctx.fillStyle = g;
+      ctx.beginPath();
+      ctx.arc(p.x, p.y, p.r*5, 0, Math.PI*2);
+      ctx.fill();
+    }
+    requestAnimationFrame(frame);
+  }
+  size(); build();
+  addEventListener('resize', ()=>{ size(); build(); });
+  requestAnimationFrame(frame);
+})();
+</script>
+</body>
+</html>
